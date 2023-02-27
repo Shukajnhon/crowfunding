@@ -8,4 +8,7 @@
   input {
     @apply outline-none;
   }
+  input:focus + .error-input {
+    display: none;
+  }
 }
