@@ -6,6 +6,7 @@ import IconWithdraw from "./IconWithdraw";
 import IconProfile from "./IconProfile";
 import IconLogout from "./IconLogout";
 import IconDarkMode from "./IconDarkMode";
+import IconFolder from "./IconFolder";
 export {
   IconEyeToggle,
   IconDashboard,
@@ -14,5 +15,6 @@ export {
   IconWithdraw,
   IconProfile,
   IconLogout,
-  IconDarkMode as IconLight,
+  IconDarkMode,
+  IconFolder,
 };
