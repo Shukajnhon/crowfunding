@@ -1,6 +1,8 @@
 import React from "react";
 import {useController} from "react-hook-form";
 import PropTypes from "prop-types";
+import {withErrorBoundary} from "react-error-boundary";
+import ErrorComponents from "../common/ErrorComponents";
 
 const Input = (props) => {
   const {
@@ -10,6 +12,7 @@ const Input = (props) => {
     className = "",
     error = "",
     placeholder,
+    children,
     ...rest
   } = props;
   const {field} = useController({
@@ -22,16 +25,24 @@ const Input = (props) => {
       <input
         id={name}
         type={type}
-        className={`w-full px-6 py-4 text-sm font-medium border rounded-xl text-text1 placeholder:text-text4  ${
-          error.length > 0 ? "border-error" : "border-b-strock"
-        } ${className}`}
-        placeholder={error.length < 0 ? props.placeholder : ""}
+        className={`w-full px-6 py-4 text-sm font-medium border rounded-xl text-text1 placeholder:text-text4 bg-transparent dark:placeholder:text-text2 dark:text-white ${
+          error.length > 0
+            ? "border-error"
+            : "border-b-strock dark:border-darkStrock"
+        } ${children ? "pr-16" : ""} ${className}`}
+        placeholder={error.length <= 0 ? props.placeholder : ""}
         {...rest}
         {...field}
       />
       {error.length > 0 && (
-        <span className="absolute error-input w-full text-sm font-medium pointer-events-none text-error top-2/4 -translate-y-2/4 left-6">
+        <span className="absolute w-full text-sm font-medium pointer-events-none select-none error-input text-error top-2/4 -translate-y-2/4 left-6">
           {error}
+        </span>
+      )}
+
+      {children && (
+        <span className="absolute cursor-pointer right-6 top-2/4 -translate-y-2/4">
+          {children}
         </span>
       )}
     </div>
@@ -45,4 +56,6 @@ Input.prototype = {
   error: PropTypes.string,
 };
 
-export default Input;
+export default withErrorBoundary(Input, {
+  FallbackComponent: <ErrorComponents></ErrorComponents>,
+});
