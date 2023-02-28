@@ -11,6 +11,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import IconEyeToggle from "../components/icons/IconEyeToggle";
 import useToggleValue from "../hooks/useToggleValue";
+import {ButtonGoogle} from "../components/button";
 
 const schema = yup
   .object({
@@ -67,10 +68,7 @@ const SignUpPage = () => {
           Sign in
         </Link>
       </p>
-      <button className="flex items-center justify-center w-full py-4 border gap-x-3 border-b-strock rounded-[10px] mb-5 text-base font-semibold text-text2 dark:text-white dark:border-darkStrock">
-        <img srcSet="./icon-google.png 2x" alt="icon-google" />
-        <span>Sign up with google</span>
-      </button>
+      <ButtonGoogle></ButtonGoogle>
       <p className="mb-4 text-xs font-normal text-center cursor-pointer lg:text-sm lg:mb-8 text-text2 dark:text-white">
         Or sign up with email
       </p>

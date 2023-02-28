@@ -27,8 +27,8 @@ const Input = (props) => {
         type={type}
         className={`w-full px-6 py-4 text-sm font-medium border rounded-xl text-text1 placeholder:text-text4 bg-transparent dark:placeholder:text-text2 dark:text-white ${
           error.length > 0
-            ? "border-error"
-            : "border-b-strock dark:border-darkStrock"
+            ? "border-error text-error"
+            : "border-b-strock text-text1 dark:border-darkStrock"
         } ${children ? "pr-16" : ""} ${className}`}
         placeholder={error.length <= 0 ? props.placeholder : ""}
         {...rest}
