@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardSearch = () => {
   return (
-    <div className="bg-white rounded-full shadow-[10px_10px_20px_rgba(218, 213, 213, 0.15)] p-2 h-[52px] flex items-center border">
+    <div className="bg-white rounded-full shadow-[10px_10px_20px_rgba(218,213,213,0.15)] p-2 h-[52px] flex items-center border">
       <div className="flex-1 px-5">
         <input
           className="w-full text-sm bg-transparent text-text1 placeholder:text-text4"

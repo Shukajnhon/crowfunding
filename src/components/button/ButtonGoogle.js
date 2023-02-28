@@ -21,5 +21,5 @@ ButtonGoogle.prototype = {
 };
 
 export default withErrorBoundary(ButtonGoogle, {
-  FallbackComponent: <ErrorComponents></ErrorComponents>,
+  FallbackComponent: ErrorComponents,
 });

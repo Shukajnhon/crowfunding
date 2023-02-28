@@ -33,5 +33,5 @@ LayoutAuthentication.propType = {
 };
 
 export default withErrorBoundary(LayoutAuthentication, {
-  fallback: ErrorComponents(),
+  FallbackComponent: ErrorComponents,
 });

@@ -4,7 +4,7 @@ import DashboardSearch from "./DashboardSearch";
 
 const DashboardTopbar = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between mb-8">
       <div className="flex items-center flex-1 gap-x-10 left">
         <img srcSet="/logo.png 2x" alt="logo" />
         <div className="w-full max-w-[458px]">

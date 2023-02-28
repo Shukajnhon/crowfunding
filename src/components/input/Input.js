@@ -57,5 +57,5 @@ Input.prototype = {
 };
 
 export default withErrorBoundary(Input, {
-  FallbackComponent: <ErrorComponents></ErrorComponents>,
+  FallbackComponent: ErrorComponents,
 });
